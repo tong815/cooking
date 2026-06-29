@@ -42,7 +42,7 @@ h1 {
 
 .play-area {
   display: grid;
-  grid-template-columns: 1fr 1.1fr 1fr;
+  grid-template-columns: 1.15fr 1.1fr 1fr;
   gap: 20px;
   align-items: start;
 }
@@ -66,12 +66,12 @@ h1 {
 
 .ingredient-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
 }
 
 .ingredient-card {
-  min-height: 96px;
+  min-height: 82px;
   border: 2px solid #f0d069;
   border-radius: 8px;
   background: #fff8d8;
@@ -81,10 +81,16 @@ h1 {
   font-weight: 700;
   display: grid;
   place-items: center;
-  gap: 6px;
+  gap: 4px;
   padding: 12px 8px;
   box-shadow: 0 5px 0 #d9a441;
   transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease;
+}
+
+.flavor-card {
+  background: #edf9ee;
+  border-color: #8ad58f;
+  box-shadow: 0 5px 0 #56a85e;
 }
 
 .ingredient-card:hover,
@@ -94,6 +100,12 @@ h1 {
   box-shadow: 0 7px 0 #d9a441;
   outline: 3px solid #4da3ff;
   outline-offset: 2px;
+}
+
+.flavor-card:hover,
+.flavor-card:focus-visible {
+  background: #dff6e3;
+  box-shadow: 0 7px 0 #56a85e;
 }
 
 .ingredient-card:active {
@@ -150,6 +162,10 @@ h1 {
   font-weight: 700;
 }
 
+.pot-list .flavor-chip {
+  background: #dff6e3;
+}
+
 .button-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -190,6 +206,21 @@ button {
   background: #f0fff4;
   border: 2px solid #7bd389;
   border-radius: 8px;
+  text-align: center;
+}
+
+.dish-image {
+  width: 86px;
+  height: 86px;
+  margin: 0 auto 10px;
+  border-radius: 50%;
+  background: #fff8d8;
+  border: 4px solid #f0d069;
+  color: #285943;
+  display: grid;
+  place-items: center;
+  font-size: 1.5rem;
+  font-weight: 900;
 }
 
 .dish-result h3 {
@@ -211,6 +242,8 @@ button {
   margin: 0;
   display: grid;
   gap: 10px;
+  max-height: 520px;
+  overflow: auto;
 }
 
 .recipe-book-list li {
@@ -235,7 +268,7 @@ button {
   }
 
   .ingredient-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 
@@ -245,8 +278,11 @@ button {
     padding: 20px 0;
   }
 
-  .ingredient-grid,
   .button-row {
     grid-template-columns: 1fr;
+  }
+
+  .ingredient-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
