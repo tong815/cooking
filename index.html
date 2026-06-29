@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Farm Pot Cooking Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="game">
+    <section class="title-area">
+      <h1>Farm Pot Cooking Game</h1>
+      <p>Pick farm ingredients, add them to the pot, and cook a dish.</p>
+    </section>
+
+    <section class="play-area" aria-label="Cooking game">
+      <div class="farm-area">
+        <h2>Farm Ingredients</h2>
+        <div class="ingredient-grid" id="ingredientGrid"></div>
+      </div>
+
+      <div class="pot-area">
+        <h2>Cooking Pot</h2>
+        <div class="pot">
+          <div class="pot-rim"></div>
+          <div class="pot-body">
+            <p id="emptyPotMessage">The pot is empty.</p>
+            <ul id="potList" class="pot-list"></ul>
+          </div>
+        </div>
+
+        <div class="button-row">
+          <button id="cookButton" class="cook-button" type="button">Cook</button>
+          <button id="clearButton" class="clear-button" type="button">Clear Pot</button>
+        </div>
+
+        <div class="dish-result" aria-live="polite">
+          <h3 id="dishName">No dish yet</h3>
+          <p id="dishExplanation">Add ingredients, then press Cook.</p>
+        </div>
+      </div>
+
+      <div class="recipe-book">
+        <h2>Recipe Book</h2>
+        <p class="book-note">Discovered recipes will appear here.</p>
+        <ul id="recipeBookList" class="recipe-book-list"></ul>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
